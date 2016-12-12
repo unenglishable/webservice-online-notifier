@@ -1,0 +1,16 @@
+{
+  "name": "webservice-online-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "request": "^2.79.0",
+    "unenglishable/webservice-online-check": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
