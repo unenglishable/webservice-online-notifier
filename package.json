@@ -2,7 +2,7 @@
   "name": "webservice-online-notifier",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "dependencies": {
     "request": "^2.79.0",
     "unenglishable/webservice-online-check": "^1.0.0"
