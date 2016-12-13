@@ -5,5 +5,5 @@
   ],
   "keyword": "A phrase to find.",
   "postCheckHook": "A URL to post to.",
-  "maxStrikes": "5"
+  "maxStrikes": 5
 }
