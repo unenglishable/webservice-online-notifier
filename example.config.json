@@ -1,0 +1,9 @@
+{
+  "urls": [
+    "https://some.url.com",
+    "https://another.url.com"
+  ],
+  "keyword": "A phrase to find.",
+  "postCheckHook": "A URL to post to.",
+  "maxStrikes": "5"
+}
