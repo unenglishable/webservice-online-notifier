@@ -19,7 +19,6 @@ tester(urls, keyword)
     console.log(result.url, 'is offline!');
     return storage.put({ url: result.url, maxStrikes })
     .then(function(jailtime) {
-      console.log(jailtime, '<?', Date.now());
       if (jailtime < Date.now()) {
         // notify and relock
         return storage.put({ url: result.url, maxStrikes, relock: true})
