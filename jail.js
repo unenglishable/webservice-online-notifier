@@ -7,7 +7,7 @@ var twentyfour = 60 * 60 * 24 * 1000;
 jail.strike = key => client.hincrbyAsync('strikes', key, 1);
 jail.zero = key => client.hdelAsync('strikes', key);
 jail.strikes = key => client.hgetAsync('strikes', key);
-jail.lock = key => client.hsetnxAsync('jail', key, Date.now() + twentyfour);
+jail.lock = key => client.hsetnxAsync('jail', key, Date.now());
 jail.relock = key => client.hsetAsync('jail', key, Date.now() + twentyfour);
 jail.inspect = key => client.hgetAsync('jail', key);
 jail.release = key => client.hdelAsync('jail', key);
