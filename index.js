@@ -2,6 +2,7 @@ var path = require('path');
 var tester = require('webservice-online-check');
 var request = require('request');
 var config = require(path.join(__dirname, 'config.json'));
+var storage = require(path.join(__dirname, 'storage'));
 
 var urls = config.urls;
 var keyword = config.keyword;
@@ -11,6 +12,7 @@ tester(urls, keyword)
 .each(function(result) {
   if (result.status === 'online') {
     console.log(result.url, 'is online!');
+    return storage.del(result.url);
   }
   else if (result.status === 'offline') {
     result.errors.forEach(function(error) {
@@ -23,4 +25,7 @@ tester(urls, keyword)
   else {
     console.log('¯\\_(ツ)_/¯');
   }
+})
+.then(function() {
+  return storage.close();
 });
