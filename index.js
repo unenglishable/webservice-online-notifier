@@ -1,7 +1,7 @@
 var path = require('path');
 var tester = require('webservice-online-check');
 var request = require('request');
-var config = require(path.join(__dirname, 'config.json'));
+var config = require(path.join(__dirname, 'config.js'));
 var storage = require(path.join(__dirname, 'storage'));
 
 var urls = config.urls;
