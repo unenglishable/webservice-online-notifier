@@ -1,3 +1,3 @@
-FROM node-7:onbuild
+FROM node:onbuild
 MAINTAINER unenglishable <unenglishable@gmail.com>
 CMD ./cron.sh
