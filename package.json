@@ -7,7 +7,7 @@
     "dotenv": "^2.0.0",
     "redis": "^2.6.3",
     "request": "^2.79.0",
-    "unenglishable/webservice-online-check": "^1.0.0"
+    "webservice-online-check": "unenglishable/webservice-online-check"
   },
   "devDependencies": {},
   "scripts": {
