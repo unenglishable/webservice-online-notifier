@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cron-scheduler": "^1.0.0",
     "dotenv": "^2.0.0",
     "redis": "^2.6.3",
     "request": "^2.79.0",
