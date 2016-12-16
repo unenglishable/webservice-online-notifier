@@ -5,6 +5,27 @@ when they're not.  Run the script at intervals.
 
 Requires node and redis.
 
+## Docker deployment
+
+Create a file called `dotenv`.  It's not `.env` because it should be
+visible on the host machine, rather than hidden.  (See the .env configuration
+section)
+
+Build the Docker image:
+```
+./build.sh
+```
+
+Pull the Redis docker image:
+```
+docker pull redis
+```
+
+Run the Docker image:
+```
+./run.sh
+```
+
 ## Installation
 
 `cd webservice-online-notifier && npm install`
