@@ -1,7 +1,8 @@
 var jail = module.exports = {};
 var path = require('path');
 var redis = require(path.join(__dirname, 'redis'));
-var client = redis.createClient();
+var config = require(path.join(__dirname, 'config'));
+var client = redis.createClient(config.redis);
 var twentyfour = 60 * 60 * 24 * 1000;
 
 jail.strike = key => client.hincrbyAsync('strikes', key, 1);
