@@ -8,7 +8,7 @@
     "dotenv": "^2.0.0",
     "redis": "^2.6.3",
     "request": "^2.79.0",
-    "webservice-online-check": "unenglishable/webservice-online-check"
+    "webservice-online-check": "unenglishable/webservice-online-check#master"
   },
   "devDependencies": {},
   "scripts": {
