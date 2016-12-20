@@ -6,6 +6,7 @@
   "dependencies": {
     "cron-scheduler": "^1.0.0",
     "dotenv": "^2.0.0",
+    "nodemailer": "^2.7.0",
     "redis": "^2.6.3",
     "request": "^2.79.0",
     "webservice-online-check": "unenglishable/webservice-online-check#master"
