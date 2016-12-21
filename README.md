@@ -35,10 +35,14 @@ See the [example .env](example.env)
 
 ```
 URLS=https://some.site https://another.site https://yet.another.site
-EMAILS=some@email.net other@email.tor yetanother@email.party
 POST_CHECK_HOOK=https://some.webhook.com/callback
 KEYWORD=some keyword to look for!
 MAX_STRIKES=5
+EMAILER_LIST=some@email.net other@email.tor yetanother@email.party
+EMAILER_SENDER=your@email.lol
+EMAILER_AWS_ACCESS_KEY=AWSweioiACCESSjoiewjKEY
+EMAILER_AWS_SECRET_KEY=AsodijW2308fjS209jcjSECRET389jiKEY
+EMAILER_AWS_HOST=email-smtp.loction.amazonaws.com
 ```
 
 ## config.json configuration
@@ -51,11 +55,17 @@ See the [example config.json](example.config.json)
     "https://some.url.com",
     "https://another.url.com"
   ],
-  "emails": [
-    "some@email.net",
-    "other@email.tor",
-    "yetanother@email.party"
-  ],
+  "emailer": {
+    "list": [
+      "some@email.net",
+      "other@email.tor",
+      "yetanother@email.party"
+    ],
+    "sender": "your@email.lol",
+    "awsAccessKey": "AWSweioiACCESSjoiewjKEY",
+    "awsSecretKey": "AsodijW2308fjS209jcjSECRET389jiKEY",
+    "awsHost": "email-smtp.loction.amazonaws.com"
+  },
   "keyword": "A phrase to find.",
   "postCheckHook": "A URL to post to.",
   "maxStrikes": 5
