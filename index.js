@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var path = require('path');
 var tester = require('webservice-online-check');
 var request = require('request');
@@ -28,7 +29,7 @@ module.exports = function() {
             if (postCheckHook) {
               request.post({ url: postCheckHook, body: { text: result.url + ' is offline: ' + JSON.stringify(result.errors) }, json: true });
             }
-            if (config.emailer.list.length > 0) {
+            if (_.get(config, 'emailer.list.length', 0) > 0) {
               emailer.send({
                 url: result.url,
                 status: 'offline',
