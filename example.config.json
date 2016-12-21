@@ -3,6 +3,11 @@
     "https://some.url.com",
     "https://another.url.com"
   ],
+  "emails": [
+    "some@email.net",
+    "other@email.tor",
+    "yetanother@email.party"
+  ],
   "keyword": "A phrase to find.",
   "postCheckHook": "A URL to post to.",
   "maxStrikes": 5

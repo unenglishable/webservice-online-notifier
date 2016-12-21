@@ -1,8 +1,10 @@
+var _ = require('lodash');
 var path = require('path');
 var tester = require('webservice-online-check');
 var request = require('request');
 var config = require(path.join(__dirname, 'config.js'));
 var storage = require(path.join(__dirname, 'storage'));
+var emailer = require(path.join(__dirname, 'emailer'));
 
 var urls = config.urls;
 var keyword = config.keyword;
@@ -26,6 +28,13 @@ module.exports = function() {
           .then(function() {
             if (postCheckHook) {
               request.post({ url: postCheckHook, body: { text: result.url + ' is offline: ' + JSON.stringify(result.errors) }, json: true });
+            }
+            if (_.get(config, 'emailer.list.length', 0) > 0) {
+              emailer.send({
+                url: result.url,
+                status: 'offline',
+                body: JSON.stringify(result.errors)
+              });
             }
           });
         }
