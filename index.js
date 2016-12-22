@@ -16,7 +16,21 @@ module.exports = function() {
   .each(function(result) {
     if (result.status === 'online') {
       console.log(result.url, 'is online!');
-      return storage.del(result.url);
+      return storage.del(result.url)
+      .then(function(wasOffline) {
+        if (wasOffline) {
+            if (postCheckHook) {
+              request.post({ url: postCheckHook, body: { text: result.url + ' is back online! :tada:'}, json: true });
+            }
+            if (_.get(config, 'emailer.list.length', 0) > 0) {
+              emailer.send({
+                url: result.url,
+                status: 'back online!',
+                body: 'Nothing to see here :)'
+              });
+            }
+        }
+      });
     }
     else if (result.status === 'offline') {
       console.log(result.url, 'is offline!');
