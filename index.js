@@ -17,8 +17,8 @@ module.exports = function() {
     if (result.status === 'online') {
       console.log(result.url, 'is online!');
       return storage.del(result.url)
-      .then(function(wasOffline) {
-        if (wasOffline) {
+      .then(function(unjailed) {
+        if (unjailed > 0) {
             if (postCheckHook) {
               request.post({ url: postCheckHook, body: { text: result.url + ' is back online! :tada:'}, json: true });
             }
