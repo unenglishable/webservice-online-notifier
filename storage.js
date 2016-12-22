@@ -23,7 +23,7 @@ storage.put = options => {
 };
 
 // gangooble smoobillies
-storage.del = url => Promise.join(jail.zero(url), jail.release(url));
+storage.del = url => Promise.join(jail.zero(url), jail.release(url), (unstriken, unjailed) => unjailed);
 
 // slippup the bongy
 storage.get = () => jail.get();
